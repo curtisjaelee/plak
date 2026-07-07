@@ -1,0 +1,260 @@
+:root {
+  --bg: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --ink: #161310;
+  --ink-soft: #6B6660;
+  --coral: #F2C81F;
+  --coral-soft: #FFF3C9;
+  --amber: #1A1A1A;
+  --amber-soft: #EFEDE8;
+  --taupe: #8B8580;
+  --taupe-soft: #F1EFEA;
+  --plum: #161310;
+  --line: #E8E5DF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+h1, h2, h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-stretch: condensed;
+  letter-spacing: -0.01em;
+}
+.content {
+  padding: 24px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.rank-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.rank-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--ink);
+  border-radius: 16px;
+  padding: 12px 14px;
+}
+
+.rank-num {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-size: 26px;
+  color: var(--ink);
+  width: 30px;
+  text-align: center;
+}
+
+.thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background: var(--coral-soft);
+}
+
+.info {
+  flex: 1;
+}
+
+.info .name {
+  font-weight: 600;
+  font-size: 14.5px;
+}
+
+.info .meta {
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.score-chip {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 100px;
+}
+
+.chip-loved { background: var(--coral); color: var(--ink); }
+.chip-fine { background: var(--amber-soft); color: var(--ink); }
+.chip-skip { background: var(--taupe-soft); color: var(--taupe); }
+
+.field { margin-bottom: 14px; }
+.field label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  font-size: 15px;
+}
+.btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-coral { background: var(--coral); color: var(--ink); }
+
+.category-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.cat-chip {
+  padding: 8px 13px;
+  border-radius: 100px;
+  font-size: 12.5px;
+  font-weight: 600;
+  background: var(--bg-card);
+  border: 1.5px solid var(--line);
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.cat-chip.active {
+  background: var(--plum);
+  color: white;
+  border-color: var(--plum);
+}
+
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  resize: vertical;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+}
+
+.rank-item .drag-handle {
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.compare-wrap {
+  padding: 10px 0 0;
+}
+
+.compare-prompt {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.compare-prompt .step {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--coral);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.compare-prompt h2 {
+  font-size: 21px;
+  margin-top: 6px;
+  line-height: 1.3;
+}
+
+.compare-prompt h2 em {
+  color: var(--coral);
+  font-style: italic;
+}
+
+.journal-pair {
+  position: relative;
+  padding: 0 4px;
+}
+
+.journal-card {
+  background: var(--bg-card);
+  border-radius: 18px;
+  padding: 22px 18px 24px;
+  text-align: center;
+  border: 1.5px solid var(--line);
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+  position: relative;
+}
+
+.journal-card:active {
+  transform: scale(0.97);
+}
+
+.journal-card .tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 60px;
+  height: 20px;
+  background: var(--amber-soft);
+  opacity: 0.9;
+  border-radius: 2px;
+}
+
+.journal-card .emoji-big {
+  font-size: 38px;
+  display: block;
+  margin: 6px 0 10px;
+}
+
+.journal-card .jname {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+.journal-card .jdate {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 5px;
+}
+
+.vs-divider {
+  text-align: center;
+  margin: 14px 0;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
